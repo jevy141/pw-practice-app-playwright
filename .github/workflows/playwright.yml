@@ -18,7 +18,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps --force
     - name: Run Playwright tests
-      run: npm run pageOjects-chrome        #previous npx playwright test, for now run only 1 test
+      run: npm run pageObjects-chrome        #previous npx playwright test, for now run only 1 test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
