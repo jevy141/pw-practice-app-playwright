@@ -82,9 +82,9 @@ export default defineConfig<TestOptions>({
   ],
 //starting webserver automatically 
   webServer: {
-    command : 'npm run start',
-     url : 'http://localhost:4200/',
-       timeout: 300000,
-       reuseExistingServer: true
-  }
+  command: 'npm run start -- --host 0.0.0.0',
+  url: 'http://127.0.0.1:4200',
+  reuseExistingServer: true,
+  timeout: 300000
+}
 }) 
