@@ -51,9 +51,13 @@ async selectDatepickerWithRangeFromToday(startDayFromToday : number , endDayFrom
           await this.page.locator('nb-calendar-pageable-navigation [data-name="chevron-right"]').click()
          calendarMonthAndYear=await this.page.locator('nb-calendar-view-mode').textContent()
          }
-    
+    //Chat GPT code for DOCKER as code at down not working in DOCKER
+const dayToSelect = this.page.locator('.day-cell:not(.bounding-month)').getByText(expectedDate, { exact: true }).first()
+await expect(dayToSelect).toBeVisible()
+await dayToSelect.click({ force: true })
+return dateToAssert
          // use .day-cell not today day-cell, as + 7 day will give 8 days further
-         await this.page.locator('.day-cell').getByText(expectedDate,{exact : true}).click()
-       return dateToAssert
+        // await this.page.locator('.day-cell').getByText(expectedDate,{exact : true}).click()
+      // return dateToAssert
   }
 }

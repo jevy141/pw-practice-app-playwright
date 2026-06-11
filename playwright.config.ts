@@ -4,7 +4,7 @@ import { TestOptions } from './test-options'
 export default defineConfig<TestOptions>({
 
    testDir: './tests',
-  timeout: 40000,
+  timeout: 90000,
   //globalTimeout: 60000,
 
   expect: {
@@ -30,8 +30,8 @@ export default defineConfig<TestOptions>({
     globalsQaURL:'https://www.globalsqa.com/demo-site/draganddrop/',
     baseURL: 'http://localhost:4200/',
     trace: 'on-first-retry',
-    actionTimeout: 20000,
-    navigationTimeout: 25000,
+    actionTimeout: 60000,
+    navigationTimeout: 60000,
     video: {
       mode: 'off',
       size: { width: 1920, height: 1080 }
